@@ -10,6 +10,33 @@
 
 ---
 
+## 📸 Ekran Görüntüleri
+
+<table align="center">
+  <tr>
+    <td align="center"><b>Giriş Ekranı</b></td>
+    <td align="center"><b>Veli Paneli</b></td>
+    <td align="center"><b>Bakıcı Arama & Seçim</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/login.png" width="250" alt="Giriş Ekranı"/></td>
+    <td><img src="screenshots/veli_panel.png" width="250" alt="Veli Paneli"/></td>
+    <td><img src="screenshots/bakici_sec.png" width="250" alt="Bakıcı Arama"/></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Bakıcı Paneli & Hava Durumu</b></td>
+    <td align="center"><b>Sohbet Ekranı</b></td>
+    <td align="center"><b>Gelişim Grafikleri</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/bakici_panel.png" width="250" alt="Bakıcı Paneli"/></td>
+    <td><img src="screenshots/chat.png" width="250" alt="Sohbet Ekranı"/></td>
+    <td><img src="screenshots/grafik.png" width="250" alt="Gelişim Grafikleri"/></td>
+  </tr>
+</table>
+
+---
+
 ## 📱 Proje Hakkında
 
 **Baby Love**, bebeklerin günlük bakım rutinlerinin (uyku, beslenme, bez değişimi, sağlık vb.) kolayca takip edilmesini sağlarken, veliler ile bakıcıların anlık iletişim kurabilmesine olanak tanır. Uygulama, sıradan bebek takip uygulamalarından farklı olarak **akıllı karar destek mekanizmaları** ve **veri gizliliği algoritmaları** barındırır.
