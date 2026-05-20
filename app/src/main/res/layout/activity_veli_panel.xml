@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor"
+        app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarVeli"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/veli_panel_title"
+            app:titleTextColor="@color/textPrimary"
+            app:titleCentered="true"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/textPrimary">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSelectBakiciToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="4dp"
+                android:text="Bakıcı Seç"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@color/primaryColor" />
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Kıyafet Ekleme Kartı -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👗 Dolaba Yeni Kıyafet Ekle"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="16dp" />
+                    <EditText
+                        android:id="@+id/etClothesName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/wardrobe_name_hint"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="14dp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textCapSentences" />
+                    <EditText
+                        android:id="@+id/etTags"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/wardrobe_tags_hint"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="14dp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="6dp"
+                        android:inputType="textCapSentences" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tag_examples"
+                        android:textSize="12sp"
+                        android:textColor="@color/textLight"
+                        android:layout_marginBottom="12dp" />
+                    <ImageView
+                        android:id="@+id/ivPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_gradient_soft"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone"
+                        android:contentDescription="Fotoğraf" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSelectPhoto"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="📷 Fotoğraf"
+                            android:background="@drawable/bg_button_secondary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="14dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"
+                            android:padding="0dp"
+                            android:layout_marginEnd="8dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnEkle"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="✅ Kaydet"
+                            android:background="@drawable/bg_button_primary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="14dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"
+                            android:padding="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Dolap Başlığı (Tıklanabilir Buton) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToggleWardrobe"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_button_secondary"
+                android:text="👗 Kıyafetlerimiz"
+                android:textAllCaps="false"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="#FF9800"
+                app:cornerRadius="16dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutWardrobeContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+                
+                <TextView
+                    android:id="@+id/tvWardrobeEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wardrobe_empty"
+                    android:textSize="14sp"
+                    android:textColor="@color/textLight"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:visibility="gone" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWardrobe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="20dp" />
+            </LinearLayout>
+
+            <!-- Takvim Butonu - Okunabilirliği artırmak için bg_button_secondary (mavi) ve beyaz yazı kullandık -->
+
+            <!-- Günlük Kayıtlar -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_button_secondary"
+                android:text="📅 Takvim - Geçmiş Kayıtlar"
+                android:textAllCaps="false"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <!-- Grafikler Butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGrowthCharts"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_button_primary"
+                android:text="📈 Büyüme Grafikleri"
+                android:textAllCaps="false"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <!-- Aile Mesajlaşma Butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChat"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_button_secondary"
+                android:text="💬 Aile Mesajlaşma Paneli"
+                android:textAllCaps="false"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📋 Bakıcı Günlük Kayıtları"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:layout_marginBottom="12dp" />
+            <TextView
+                android:id="@+id/tvLogsEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_logs_yet"
+                android:textSize="14sp"
+                android:textColor="@color/textLight"
+                android:gravity="center"
+                android:padding="24dp"
+                android:visibility="gone" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

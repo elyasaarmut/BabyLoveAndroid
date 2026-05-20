@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor"
+        app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Profilimi Düzenle"
+            app:titleTextColor="@color/textPrimary"
+            app:titleCentered="true"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/textPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="24dp">
+                
+                <ImageView
+                    android:id="@+id/ivProfileImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:background="@drawable/bg_circle_gradient"
+                    android:scaleType="centerCrop"
+                    android:padding="30dp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabAddPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@android:drawable/ic_input_add"
+                    app:fabSize="mini"
+                    app:tint="@color/textOnPrimary"
+                    app:backgroundTint="@color/primaryColor" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/etCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Şehir (Örn: İstanbul)"
+                android:background="@drawable/bg_input_field"
+                android:padding="14dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:inputType="textCapWords" />
+
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_input_field"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/etAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Yaş (Örn: 28)"
+                android:background="@drawable/bg_input_field"
+                android:padding="14dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etExperience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deneyim (Yıl, Örn: 5)"
+                android:background="@drawable/bg_input_field"
+                android:padding="14dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="12dp"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/etWorkingHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Çalışma Saatleri (Örn: Hafta içi 09:00 - 18:00)"
+                android:background="@drawable/bg_input_field"
+                android:padding="14dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="24dp"
+                android:inputType="textCapSentences" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveProfile"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Profilimi Kaydet"
+                android:background="@drawable/bg_button_primary"
+                app:backgroundTint="@null"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Baby Love</string>
+
+    <!-- Splash -->
+    <string name="splash_title">Baby Love</string>
+    <string name="splash_subtitle">Akıllı Bebek Bakım Asistanı</string>
+    <string name="splash_owners">Ömer Özkan &amp; Elyasa Armut</string>
+
+    <!-- Login -->
+    <string name="login_title">Hoş Geldiniz</string>
+    <string name="login_subtitle">Devam etmek için panelinizi seçin</string>
+    <string name="btn_veli">Veli Paneli</string>
+    <string name="btn_bakici">Bakıcı Paneli</string>
+    <string name="veli_desc">Kıyafet ekleyin, günlük kayıtları takip edin</string>
+    <string name="bakici_desc">Hava durumuna göre öneri alın, günlük girin</string>
+
+    <!-- Veli Panel -->
+    <string name="veli_panel_title">Veli Paneli</string>
+    <string name="add_wardrobe">Kıyafet Ekle</string>
+    <string name="wardrobe_list">Dolap</string>
+    <string name="daily_logs">Günlük Kayıtlar</string>
+    <string name="no_logs_yet">Henüz günlük kaydı yok</string>
+    <string name="wardrobe_empty">Dolap boş, kıyafet ekleyin</string>
+
+    <!-- Bakıcı Panel -->
+    <string name="bakici_panel_title">Bakıcı Paneli</string>
+    <string name="weather_loading">Hava durumu yükleniyor…</string>
+    <string name="recommendation_loading">Öneri bekleniyor…</string>
+    <string name="add_log_entry">Günlük Kayıt Ekle</string>
+    <string name="wear_these">Bugün Bunları Giydirebilirsin</string>
+    <string name="dont_wear_these">Bunları Giydirme</string>
+    <string name="no_recommendation">Bu havaya uygun kıyafet bulunamadı</string>
+
+    <!-- Add Wardrobe -->
+    <string name="add_wardrobe_title">Yeni Kıyafet Ekle</string>
+    <string name="wardrobe_name_hint">Kıyafet adı (Örn: Mavi Mont)</string>
+    <string name="wardrobe_tags_hint">Etiketler (virgülle ayırın)</string>
+    <string name="select_photo">Fotoğraf Seç</string>
+    <string name="save_wardrobe">Kaydet</string>
+    <string name="tag_examples">Örn: kışlık, kalın, ince, rüzgarlık, yazlık, yağmurluk</string>
+
+    <!-- Add Log -->
+    <string name="add_log_title">Yeni Günlük Kaydı</string>
+    <string name="log_title_hint">Başlık (Örn: Park Gezisi)</string>
+    <string name="log_notes_hint">Bebeğin durumu nasıl? Ne yedi? Neler yaptı?</string>
+    <string name="add_photo">Fotoğraf Ekle</string>
+    <string name="save_log">Kaydı Gönder</string>
+
+    <!-- Milestone Tags -->
+    <string name="milestones">Kilometre Taşları</string>
+
+    <!-- Weather -->
+    <string name="weather_city_format">Şehir: %1$s</string>
+    <string name="weather_temp_format">%.1f °C</string>
+    <string name="weather_wind_format">Rüzgar: %.1f m/s</string>
+    <string name="weather_humidity_format">Nem: %d%%</string>
+
+    <!-- General -->
+    <string name="loading">Yükleniyor…</string>
+    <string name="error_generic">Bir hata oluştu</string>
+    <string name="success_saved">Başarıyla kaydedildi!</string>
+    <string name="success_wardrobe_added">Kıyafet eklendi!</string>
+    <string name="success_log_saved">Günlük kaydedildi!</string>
+    <string name="error_empty_tags">Lütfen en az bir etiket girin</string>
+    <string name="error_empty_comment">Lütfen bir yorum yazın</string>
+    <string name="error_upload_failed">Yükleme başarısız oldu</string>
+    <string name="confirm_delete">Silmek istediğinize emin misiniz?</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+    <string name="cancel">İptal</string>
+    <string name="delete">Sil</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg_splash_gradient"
+    android:padding="40dp">
+
+    <!-- Uygulama Logosu -->
+    <ImageView
+        android:id="@+id/ivSplashLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/app_logo"
+        android:contentDescription="Baby Love Logo"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Uygulama Adı -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_title"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:letterSpacing="0.05"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Alt Başlık -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_subtitle"
+        android:textSize="16sp"
+        android:textColor="#DDFFFFFF"
+        android:layout_marginBottom="48dp" />
+
+    <!-- Yapımcı Adı -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_owners"
+        android:textSize="13sp"
+        android:textColor="#AAFFFFFF"
+        android:layout_gravity="center" />
+
+</LinearLayout>

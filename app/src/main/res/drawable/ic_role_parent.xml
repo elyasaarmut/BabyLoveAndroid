@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Veli ikonu - Aile / Ebeveyn -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="56dp"
+    android:height="56dp"
+    android:viewportWidth="56"
+    android:viewportHeight="56">
+
+    <!-- Arka plan daire -->
+    <path
+        android:fillColor="#FFF0F6"
+        android:pathData="M28,28 m-26,0 a26,26 0 1,0 52,0 a26,26 0 1,0 -52,0" />
+
+    <!-- Büyük kişi (veli) - baş -->
+    <path
+        android:fillColor="#E8A0BF"
+        android:pathData="M22,18 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0" />
+    <!-- Büyük kişi - gövde -->
+    <path
+        android:fillColor="#E8A0BF"
+        android:pathData="M10,38 C10,28 34,28 34,38 L34,42 L10,42 Z" />
+
+    <!-- Küçük kişi (bebek) - baş -->
+    <path
+        android:fillColor="#7EC8E3"
+        android:pathData="M38,24 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0" />
+    <!-- Küçük kişi - gövde -->
+    <path
+        android:fillColor="#7EC8E3"
+        android:pathData="M30,38 C30,32 46,32 46,38 L46,42 L30,42 Z" />
+</vector>

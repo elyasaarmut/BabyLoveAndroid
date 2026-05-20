@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundColor"
+        app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarBakici"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/bakici_panel_title"
+            app:titleTextColor="@color/textPrimary"
+            app:titleCentered="true"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationIconTint="@color/textPrimary" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hava Durumu Kartı -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_weather_card"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:id="@+id/ivWeatherIcon"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:contentDescription="Hava ikonu" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="12dp">
+                            <TextView
+                                android:id="@+id/tvTemperature"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="--°C"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/textPrimary" />
+                            <TextView
+                                android:id="@+id/tvWeatherDesc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/weather_loading"
+                                android:textSize="14sp"
+                                android:textColor="@color/textSecondary" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:gravity="end">
+                            <TextView
+                                android:id="@+id/tvWind"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="💨 -- m/s"
+                                android:textSize="13sp"
+                                android:textColor="@color/textSecondary" />
+                            <TextView
+                                android:id="@+id/tvHumidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="💧 --%"
+                                android:textSize="13sp"
+                                android:textColor="@color/textSecondary"
+                                android:layout_marginTop="4dp" />
+                            <TextView
+                                android:id="@+id/tvCityName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📍 İstanbul"
+                                android:textSize="13sp"
+                                android:textColor="@color/textSecondary"
+                                android:layout_marginTop="4dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- Öneri Özeti -->
+                    <TextView
+                        android:id="@+id/tvRecommendationSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recommendation_loading"
+                        android:textSize="14sp"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginTop="12dp"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Hızlı Rutinler Kartı -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⚡ Hızlı Rutin Kaydet"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="12dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnQuickFeed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            android:layout_weight="1"
+                            android:text="🍼 Beslenme"
+                            android:background="@drawable/bg_button_primary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="12dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="11sp"
+                            android:textAllCaps="false"
+                            android:padding="2dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:gravity="center"
+                            android:layout_marginEnd="6dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnQuickSleep"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            android:layout_weight="1"
+                            android:text="😴 Uyku"
+                            android:background="@drawable/bg_button_secondary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="12dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="11sp"
+                            android:textAllCaps="false"
+                            android:padding="2dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:gravity="center"
+                            android:layout_marginEnd="6dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnQuickDiaper"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:minHeight="48dp"
+                            android:layout_weight="1"
+                            android:text="👶 Bez Değişimi"
+                            android:background="@drawable/bg_button_primary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="12dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="10sp"
+                            android:textAllCaps="false"
+                            android:padding="2dp"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Giydir Bölümü -->
+            <TextView
+                android:id="@+id/tvWearTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/wear_these"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/successColor"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWearThese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:clipToPadding="false"
+                android:visibility="gone" />
+
+            <!-- Giydirme Bölümü -->
+            <TextView
+                android:id="@+id/tvDontWearTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/dont_wear_these"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDontWearThese"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:clipToPadding="false"
+                android:visibility="gone" />
+
+            <!-- Günlük Kayıt Ekleme Kartı -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📝 Günlük Kayıt Ekle"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textPrimary"
+                        android:layout_marginBottom="16dp" />
+                    <EditText
+                        android:id="@+id/etLogTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/log_title_hint"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="14dp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="textCapSentences" />
+                    <EditText
+                        android:id="@+id/etComment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/log_notes_hint"
+                        android:background="@drawable/bg_input_field"
+                        android:padding="14dp"
+                        android:textSize="15sp"
+                        android:minLines="3"
+                        android:gravity="top"
+                        android:layout_marginBottom="12dp"
+                        android:inputType="textCapSentences|textMultiLine" />
+
+                    <!-- Boy ve Kilo -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+                        <EditText
+                            android:id="@+id/etHeight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Boy (cm)"
+                            android:background="@drawable/bg_input_field"
+                            android:padding="14dp"
+                            android:textSize="15sp"
+                            android:layout_marginEnd="8dp"
+                            android:inputType="numberDecimal" />
+                        <EditText
+                            android:id="@+id/etWeight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Kilo (kg)"
+                            android:background="@drawable/bg_input_field"
+                            android:padding="14dp"
+                            android:textSize="15sp"
+                            android:inputType="numberDecimal" />
+                    </LinearLayout>
+
+                    <!-- Milestone Tags -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/milestones"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/textSecondary"
+                        android:layout_marginBottom="8dp" />
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupMilestones"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Fotoğraf önizleme -->
+                    <ImageView
+                        android:id="@+id/ivLogPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_gradient_soft"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone"
+                        android:contentDescription="Fotoğraf" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLogPhoto"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="📷 Fotoğraf"
+                            android:background="@drawable/bg_button_secondary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="14dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"
+                            android:padding="0dp"
+                            android:layout_marginEnd="8dp" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnLog"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="✅ Gönder"
+                            android:background="@drawable/bg_button_primary"
+                            app:backgroundTint="@null"
+                            app:cornerRadius="14dp"
+                            android:textColor="@color/textOnPrimary"
+                            android:textSize="13sp"
+                            android:textAllCaps="false"
+                            android:padding="0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Takvim Butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_button_secondary"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:text="📅 Takvim - Geçmiş Kayıtlar"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <!-- Grafikler Butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGrowthCharts"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_button_primary"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:text="📈 Büyüme Grafikleri"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <!-- Sohbet Butonu -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChat"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_button_secondary"
+                app:backgroundTint="@null"
+                app:cornerRadius="16dp"
+                android:text="💬 Aile Mesajlaşma Paneli"
+                android:textColor="@color/textOnPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
